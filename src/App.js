@@ -117,89 +117,89 @@ function App()
     return uniqueInjuries; 
   };
 
-  return ( //This code was done with the help of chatgpt
+  return ( //this code was done with the help of chatgpt
     <div className="app-container"> 
-      <h1>Football Team Information</h1>
+      <h1>football team information</h1> 
 
-      {/* Input for Team Names */}
+      {/* input for team names */}
       <div className="input-section"> 
         <input
           type="text"
-          name="team1"
-          placeholder="Team 1's name"
-          value={teamNames.team1} 
+          name="team1" //input field for team 1's name
+          placeholder="team 1's name" //placeholder text inside the input
+          value={teamNames.team1} //binding the value to team1 state
+          onChange={handleChange} //calls handleChange to update state on input change
+        />
+        <input
+          type="text"
+          name="team2" //input field for team 2's name
+          placeholder="team 2's name" 
+          value={teamNames.team2} //binding the value to team2 state
           onChange={handleChange} 
         />
         <input
           type="text"
-          name="team2"
-          placeholder="Team 2's name"
-          value={teamNames.team2} 
+          name="team3" //input field for team 3's name
+          placeholder="team 3's name" 
+          value={teamNames.team3} //binding the value to team3 state
           onChange={handleChange} 
         />
-        <input
-          type="text"
-          name="team3"
-          placeholder="Team 3's name"
-          value={teamNames.team3} 
-          onChange={handleChange} 
-        />
-        <button onClick={handleSubmit}>Get Team Info</button> 
+        <button onClick={handleSubmit}>get team info</button>
       </div>
 
-      {loading && <p>Loading...</p>} 
+      {loading && <p>loading...</p>} 
       {error && <p>{error}</p>} 
 
-      {/* Display Fetched Data */}
-      {data && data.map((teamData, index) => ( 
+      {/* display fetched data */}
+      {data && data.map((teamData, index) => ( //loops through the data array to display each team's info
         <div key={index} className="team-section"> 
-          <h2>Team {index + 1} Information</h2>
+          <h2>team {index + 1} information</h2>
 
-          {/* Upcoming Fixtures */}
-          <h3>Upcoming Fixtures</h3> 
-          <div className="container"> 
+          {/* upcoming fixtures */}
+          <h3>upcoming fixtures</h3> 
+          <div className="container">
             {teamData && teamData.fixtures && teamData.fixtures.response && teamData.fixtures.response.length > 0 ? (
-              teamData.fixtures.response.map((fixture, i) => ( 
-                <div className="fixture-card" key={i}> 
+              teamData.fixtures.response.map((fixture, i) => ( //maps through each fixture to display it
+                <div className="fixture-card" key={i}>
                   <div className="fixture-teams"> 
                     <img src={fixture.teams.home.logo} alt={fixture.teams.home.name} /> 
                     {fixture.teams.home.name} vs 
                     <img src={fixture.teams.away.logo} alt={fixture.teams.away.name} /> 
                     {fixture.teams.away.name} 
                   </div>
-                  <div className="fixture-date">{new Date(fixture.fixture.date).toLocaleDateString()}</div> 
+                  <div className="fixture-date">{new Date(fixture.fixture.date).toLocaleDateString()}</div> //converts fixture date to a readable format
                 </div>
               ))
             ) : (
-              <p>No upcoming fixtures available.</p> 
+              <p>no upcoming fixtures available.</p> //displays a message if no fixtures are available
             )}
           </div>
 
-          {/* Standings */}
-          <h3>Standings</h3> 
+          {/* standings */}
+          <h3>standings</h3> 
           {teamData && teamData.standings && teamData.standings.response && teamData.standings.response.length > 0 ? (
-            teamData.standings.response.map((standing, i) => ( 
+            teamData.standings.response.map((standing, i) => ( //maps through standings data to display it
               <div key={i} className="standing-card"> 
                 <span>{standing.league.name}</span> 
-                <p>Position: {standing.league.standings[0][0].rank}</p> 
-                <p>Points: {standing.league.standings[0][0].points}</p> 
+                <p>position: {standing.league.standings[0][0].rank}</p> 
+                <p>points: {standing.league.standings[0][0].points}</p> 
               </div>
             ))
           ) : (
-            <p>No standings available.</p> 
+            <p>no standings available.</p> //displays a message if standings are not available
           )}
 
-          {/* Injuries */}
-          <h3>Injuries</h3> 
-          <ul> 
+          {/* injuries */}
+          <h3>injuries</h3> 
+          <ul> //unordered list for injuries
             {teamData && teamData.injuries && teamData.injuries.response && teamData.injuries.response.length > 0 ? (
-              removeDuplicateInjuries(teamData.injuries.response).map((injury, i) => ( 
+              removeDuplicateInjuries(teamData.injuries.response).map((injury, i) => ( //maps through injuries and removes duplicates
                 <li key={i}> 
                   {injury.player.name} 
                 </li>
               ))
             ) : (
-              <li>No injury data available.</li> 
+              <li>no injury data available.</li> //displays a message if no injuries are available
             )}
           </ul>
         </div>
