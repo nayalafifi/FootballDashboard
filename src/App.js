@@ -167,7 +167,7 @@ function App()
                     <img src={fixture.teams.away.logo} alt={fixture.teams.away.name} /> 
                     {fixture.teams.away.name} 
                   </div>
-                  <div className="fixture-date">{new Date(fixture.fixture.date).toLocaleDateString()}</div> //converts fixture date to a readable format
+                  <div className="fixture-date">{new Date(fixture.fixture.date).toLocaleDateString()}</div> 
                 </div>
               ))
             ) : (
@@ -191,7 +191,7 @@ function App()
 
           {/* injuries */}
           <h3>injuries</h3> 
-          <ul> //unordered list for injuries
+          <ul>
             {teamData && teamData.injuries && teamData.injuries.response && teamData.injuries.response.length > 0 ? (
               removeDuplicateInjuries(teamData.injuries.response).map((injury, i) => ( //maps through injuries and removes duplicates
                 <li key={i}> 
