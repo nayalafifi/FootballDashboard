@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+Here's a draft `README.md` file that you can include in your project:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Football Team Information Dashboard
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+The **Football Team Information Dashboard** is a simple React application that allows users to input the names of football teams and retrieve detailed information about upcoming fixtures, standings, and injuries for each team. This project leverages the [API-Football](https://rapidapi.com/api-sports/api/api-football) API to fetch real-time data related to football teams. The app provides a clean interface for football enthusiasts to easily keep track of their favorite teams and their upcoming matches.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Problem It Solves
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Finding detailed, up-to-date information about football teams across different leagues often requires visiting multiple websites or apps. This project solves that problem by integrating all relevant information — including upcoming fixtures, standings, and player injuries — into one unified, easy-to-use interface. It streamlines the process of keeping track of multiple teams, providing real-time data all in one place.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Input up to three football teams by name.
+- Fetch upcoming fixtures for each team with detailed match information.
+- Display current league standings for the specified teams.
+- Show injuries, if available, for each team.
+- Clean and responsive design for a user-friendly experience.
 
-### `npm run build`
+## Setup and Run Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/nayalafifi/FootballDashboard.git
+   cd FootballDashboard
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**:
+   Make sure you have [Node.js](https://nodejs.org/) installed. Then, run the following command in the project directory to install required packages:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Create an `.env` file**:
+   Inside the root folder of your project, create an `.env` file and add your API key:
+   ```bash
+   REACT_APP_API_KEY=your-api-key-here
+   ```
 
-### `npm run eject`
+4. **Run the project**:
+   Start the development server by running:
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   This will launch the app on `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project utilizes the [API-Football](https://rapidapi.com/api-sports/api/api-football) to gather real-time data about football teams, including:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Upcoming Fixtures**: Displays the next 15 matches for the teams.
+- **Standings**: Shows the team's current position and points in the league.
+- **Injuries**: Lists player injuries without duplicates.
 
-## Learn More
+The API is integrated using `fetch` requests in React. Data is pulled from API-Football's endpoints and dynamically displayed in the dashboard based on user input.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Credits for AI-Generated Code
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Portions of this project were generated using **ChatGPT**, an AI language model. The AI assisted in generating the core logic for fetching data from the API, handling team information inputs, and formatting the data display. Specifically, AI was used to help structure the following features:
+- Fetching data for team fixtures, standings, and injuries.
+- Structuring the display of fixtures in a visually appealing card layout.
 
-### Code Splitting
+These AI-generated sections greatly accelerated the development process and helped in setting up the core functionality of the application. The AI-generated code was adapted and modified to fit the specific requirements of the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
