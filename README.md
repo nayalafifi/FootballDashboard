@@ -1,6 +1,3 @@
-Here's a draft `README.md` file that you can include in your project:
-
----
 
 # Football Team Information Dashboard
 
